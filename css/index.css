@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+}
+
+:root {
+  --main: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: #262f38;
+  --medium-blue: #273039;
+  --dark-blue: #1b222c;
+  --very-dark-blue: #141519;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--very-dark-blue);
+  display: grid;
+  grid-template-columns: auto 25rem auto;
+  grid-template-areas:
+    ". . ."
+    ". main ."
+    "footer footer footer";
+}
+
+main {
+  align-self: center;
+  grid-area: main;
+  background: var(--dark-blue);
+  border-radius: 1rem;
+  padding: 2rem;
+  grid-template-columns: 10rem;
+}
+
+main section {
+  height: 100%;
+}
+
+.circle-background {
+  background-color: var(--medium-blue);
+  border-radius: 80%;
+  padding: 0.5rem;
+}
+
+.rate-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.rate-form h1 {
+  color: var(--white);
+  margin: 1rem 0;
+}
+
+.rate-form p {
+  color: var(--light-grey);
+  margin-bottom: 2rem;
+}
+
+.rate-form,
+.rate-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.rate-form img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.rate-form form .inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rate-form form .inputs input[type="radio"] {
+  opacity: 0;
+  width: 0;
+  position: fixed;
+}
+
+.rate-form form .inputs input[type="radio"]:checked + label {
+  background-color: var(--main);
+  color: var(--white);
+}
+
+.rate-form form .inputs label {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  line-height: 2;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--light-grey);
+  transition: all 0.5s;
+  transition-property: color, background-color;
+}
+
+.rate-form form .inputs label:hover {
+  background-color: var(--light-grey);
+  color: var(--white);
+}
+
+.rate-form form button {
+  background-color: var(--main);
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1em;
+  padding: 1rem 0;
+  border-radius: 2rem;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.rate-form form button:hover {
+  background-color: var(--light-grey);
+  color: var(--white);
+}
+
+footer {
+  display: flex;
+  flex-direction: column-reverse;
+  padding-bottom: 3rem;
+  grid-area: footer;
+}
+
+footer p {
+  text-align: center;
+  color: var(--white);
+}
+
+footer p a {
+  color: var(--main);
+}
